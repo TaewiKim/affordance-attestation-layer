@@ -1,0 +1,99 @@
+{
+  "categories": {
+    "abort_then_retry": {
+      "failed": 0,
+      "n": 125,
+      "passed": 125,
+      "reasons": {
+        "abort_release_retry_complete": 125
+      }
+    },
+    "benign_completion": {
+      "failed": 0,
+      "n": 125,
+      "passed": 125,
+      "reasons": {
+        "complete": 125
+      }
+    },
+    "concurrent_duplicate_race": {
+      "failed": 0,
+      "n": 125,
+      "passed": 125,
+      "reasons": {
+        "exactly_one_winner": 125
+      }
+    },
+    "expired_reservation_recovery": {
+      "failed": 0,
+      "n": 125,
+      "passed": 125,
+      "reasons": {
+        "expired_reservation_recovered": 125
+      }
+    },
+    "multi_renewal_completion": {
+      "failed": 0,
+      "n": 125,
+      "passed": 125,
+      "reasons": {
+        "four_renewals_complete": 125
+      }
+    },
+    "replay_after_completion": {
+      "failed": 0,
+      "n": 125,
+      "passed": 125,
+      "reasons": {
+        "replay:authorization_instance_consumed": 125
+      }
+    },
+    "restart_persistence": {
+      "failed": 0,
+      "n": 125,
+      "passed": 125,
+      "reasons": {
+        "replay:authorization_instance_consumed": 125
+      }
+    },
+    "wrong_target_denial": {
+      "failed": 0,
+      "n": 125,
+      "passed": 125,
+      "reasons": {
+        "target:target_not_authorized_by_order": 125
+      }
+    }
+  },
+  "configuration": {
+    "cases_per_category_per_seed": 25,
+    "categories": [
+      "benign_completion",
+      "wrong_target_denial",
+      "replay_after_completion",
+      "abort_then_retry",
+      "expired_reservation_recovery",
+      "restart_persistence",
+      "concurrent_duplicate_race",
+      "multi_renewal_completion"
+    ],
+    "periodic_restart_every": 20,
+    "race_contenders": 8,
+    "renewals_per_case": 4,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "failure_records": [],
+  "overall": {
+    "failed": 0,
+    "mission_units": 1000,
+    "passed": 1000,
+    "planned_restarts": 45
+  },
+  "scope": "Generated stateful mission workload; not deployment reliability."
+}

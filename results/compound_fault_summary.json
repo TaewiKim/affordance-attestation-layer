@@ -1,0 +1,89 @@
+{
+  "benign_reasons": {
+    "complete": 500
+  },
+  "configuration": {
+    "cases_per_regime_per_seed": 100,
+    "regimes": [
+      "pre_issue_pair",
+      "pre_issue_triple",
+      "runtime_pair",
+      "post_issue_plus_runtime"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "overall": {
+    "aal_barrier_escapes": 0,
+    "aal_benign_completions": 500,
+    "aal_escape_upper95": 0.0014967448951882512,
+    "aal_false_blocks_or_aborts": 0,
+    "benign_cases": 500,
+    "hazard_cases": 2000,
+    "no_guard_escapes": 2000,
+    "simplex_escapes": 1530
+  },
+  "regimes": {
+    "post_issue_plus_runtime": {
+      "aal_escapes": 0,
+      "aal_reasons": {
+        "endpoint_outside_binding": 500
+      },
+      "n": 500,
+      "no_guard_escapes": 500,
+      "simplex_escapes": 348
+    },
+    "pre_issue_pair": {
+      "aal_escapes": 0,
+      "aal_reasons": {
+        "geometry:endpoint_frame_mismatch": 26,
+        "geometry:endpoint_not_at_sensed_target": 28,
+        "geometry:no_sensed_pose_for_authorized_target": 34,
+        "geometry:wrong_room": 31,
+        "order:missing_or_invalid_mac": 103,
+        "order:outside_validity_interval": 95,
+        "protocol:step_not_satisfied": 18,
+        "target:evidence_stale": 59,
+        "target:sensor_conflict": 51,
+        "target:target_not_authorized_by_order": 41,
+        "tool:tool_uncalibrated": 14
+      },
+      "n": 500,
+      "no_guard_escapes": 500,
+      "simplex_escapes": 500
+    },
+    "pre_issue_triple": {
+      "aal_escapes": 0,
+      "aal_reasons": {
+        "geometry:endpoint_frame_mismatch": 11,
+        "geometry:endpoint_not_at_sensed_target": 9,
+        "geometry:no_sensed_pose_for_authorized_target": 7,
+        "geometry:wrong_room": 17,
+        "order:missing_or_invalid_mac": 156,
+        "order:outside_validity_interval": 157,
+        "target:evidence_stale": 54,
+        "target:sensor_conflict": 47,
+        "target:target_not_authorized_by_order": 42
+      },
+      "n": 500,
+      "no_guard_escapes": 500,
+      "simplex_escapes": 500
+    },
+    "runtime_pair": {
+      "aal_escapes": 0,
+      "aal_reasons": {
+        "abort:identity_confidence_dropped": 182,
+        "abort:workspace_intrusion": 318
+      },
+      "n": 500,
+      "no_guard_escapes": 500,
+      "simplex_escapes": 182
+    }
+  },
+  "scope": "Generated compound-fault interaction campaign; not deployment risk."
+}

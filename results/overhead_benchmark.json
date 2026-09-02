@@ -1,0 +1,417 @@
+{
+  "configuration": {
+    "durable_n_per_repetition": 500,
+    "ephemeral_n_per_repetition": 5000,
+    "race_contenders": 8,
+    "race_rounds_per_repetition": 100,
+    "repetitions": 3,
+    "restart_n_per_repetition": 100,
+    "revalidate_n_per_repetition": 100000
+  },
+  "environment": {
+    "cpu_count": 5,
+    "machine": "x86_64",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "processor": "AMD EPYC 9V74 80-Core Processor",
+    "python": "3.13.5"
+  },
+  "metrics": {
+    "durable_certify_plus_kernel_entry": {
+      "failures": 0,
+      "median_run_mean_us": 1469.3708359999998,
+      "median_run_p50_us": 1417.055,
+      "median_run_p95_us": 2429.5987500000015,
+      "median_run_p99_us": 3461.102719999998,
+      "median_run_throughput_ops_s": 680.5633918271126,
+      "note": "Includes two write-through JSON ledger transitions (reserve and consume); ledger grows across the run.",
+      "per_run": [
+        {
+          "failures": 0,
+          "max_us": 3980.943,
+          "mean_us": 1385.2202379999999,
+          "n": 500,
+          "name": "durable_certify_plus_kernel_entry",
+          "note": "Includes two write-through JSON ledger transitions (reserve and consume); ledger grows across the run.",
+          "p50_us": 1417.055,
+          "p95_us": 2121.0576,
+          "p99_us": 3322.542939999998,
+          "successes": 500,
+          "throughput_ops_s_from_measured_call_time": 721.9068654698647
+        },
+        {
+          "failures": 0,
+          "max_us": 4275.348,
+          "mean_us": 1500.80766,
+          "n": 500,
+          "name": "durable_certify_plus_kernel_entry",
+          "note": "Includes two write-through JSON ledger transitions (reserve and consume); ledger grows across the run.",
+          "p50_us": 1514.442,
+          "p95_us": 2429.5987500000015,
+          "p99_us": 3461.102719999998,
+          "successes": 500,
+          "throughput_ops_s_from_measured_call_time": 666.3078998410763
+        },
+        {
+          "failures": 0,
+          "max_us": 11631.653,
+          "mean_us": 1469.3708359999998,
+          "n": 500,
+          "name": "durable_certify_plus_kernel_entry",
+          "note": "Includes two write-through JSON ledger transitions (reserve and consume); ledger grows across the run.",
+          "p50_us": 1354.04,
+          "p95_us": 2487.0473500000007,
+          "p99_us": 4531.6737099999955,
+          "successes": 500,
+          "throughput_ops_s_from_measured_call_time": 680.5633918271126
+        }
+      ],
+      "repetitions": 3,
+      "run_p50_range_us": [
+        1354.04,
+        1514.442
+      ],
+      "run_p95_range_us": [
+        2121.0576,
+        2487.0473500000007
+      ],
+      "run_p99_range_us": [
+        3322.542939999998,
+        4531.6737099999955
+      ],
+      "samples_per_repetition": 500,
+      "successes": 1500,
+      "total_samples": 1500
+    },
+    "eight_contender_duplicate_race": {
+      "failures": 0,
+      "median_run_mean_us": 10254.84635,
+      "median_run_p50_us": 8924.800500000001,
+      "median_run_p95_us": 15515.890199999998,
+      "median_run_p99_us": 19320.587240000008,
+      "median_run_throughput_ops_s": 97.5148691525739,
+      "note": "Wall-clock duration to resolve eight simultaneous durable certifiers; exactly one winner required.",
+      "per_run": [
+        {
+          "failures": 0,
+          "max_us": 25859.021,
+          "mean_us": 10878.60869,
+          "n": 100,
+          "name": "eight_contender_duplicate_race",
+          "note": "Wall-clock duration to resolve eight simultaneous durable certifiers; exactly one winner required.",
+          "p50_us": 10254.0625,
+          "p95_us": 15751.27365,
+          "p99_us": 18477.14045000004,
+          "successes": 100,
+          "throughput_ops_s_from_measured_call_time": 91.92351967942695
+        },
+        {
+          "failures": 0,
+          "max_us": 20463.368,
+          "mean_us": 10254.84635,
+          "n": 100,
+          "name": "eight_contender_duplicate_race",
+          "note": "Wall-clock duration to resolve eight simultaneous durable certifiers; exactly one winner required.",
+          "p50_us": 8924.800500000001,
+          "p95_us": 15515.890199999998,
+          "p99_us": 19320.587240000008,
+          "successes": 100,
+          "throughput_ops_s_from_measured_call_time": 97.5148691525739
+        },
+        {
+          "failures": 0,
+          "max_us": 25124.844,
+          "mean_us": 9833.27064,
+          "n": 100,
+          "name": "eight_contender_duplicate_race",
+          "note": "Wall-clock duration to resolve eight simultaneous durable certifiers; exactly one winner required.",
+          "p50_us": 8371.3685,
+          "p95_us": 14897.45404999999,
+          "p99_us": 19472.45979000003,
+          "successes": 100,
+          "throughput_ops_s_from_measured_call_time": 101.69556362378326
+        }
+      ],
+      "repetitions": 3,
+      "run_p50_range_us": [
+        8371.3685,
+        10254.0625
+      ],
+      "run_p95_range_us": [
+        14897.45404999999,
+        15751.27365
+      ],
+      "run_p99_range_us": [
+        18477.14045000004,
+        19472.45979000003
+      ],
+      "samples_per_repetition": 100,
+      "successes": 300,
+      "total_samples": 300
+    },
+    "ephemeral_certificate_issuance": {
+      "failures": 0,
+      "median_run_mean_us": 36.6421138,
+      "median_run_p50_us": 31.968,
+      "median_run_p95_us": 45.257500000000064,
+      "median_run_p99_us": 94.78206000000085,
+      "median_run_throughput_ops_s": 27291.001972708247,
+      "note": "Includes all deterministic checks, HMAC, and in-memory reservation; excludes input construction.",
+      "per_run": [
+        {
+          "failures": 0,
+          "max_us": 9874.866,
+          "mean_us": 36.6421138,
+          "n": 5000,
+          "name": "ephemeral_certificate_issuance",
+          "note": "Includes all deterministic checks, HMAC, and in-memory reservation; excludes input construction.",
+          "p50_us": 31.938499999999998,
+          "p95_us": 41.63950000000003,
+          "p99_us": 84.25301000000013,
+          "successes": 5000,
+          "throughput_ops_s_from_measured_call_time": 27291.001972708247
+        },
+        {
+          "failures": 0,
+          "max_us": 3265.132,
+          "mean_us": 37.7611674,
+          "n": 5000,
+          "name": "ephemeral_certificate_issuance",
+          "note": "Includes all deterministic checks, HMAC, and in-memory reservation; excludes input construction.",
+          "p50_us": 32.088,
+          "p95_us": 50.862550000000056,
+          "p99_us": 124.7520100000001,
+          "successes": 5000,
+          "throughput_ops_s_from_measured_call_time": 26482.232114465824
+        },
+        {
+          "failures": 0,
+          "max_us": 2582.811,
+          "mean_us": 35.552225199999995,
+          "n": 5000,
+          "name": "ephemeral_certificate_issuance",
+          "note": "Includes all deterministic checks, HMAC, and in-memory reservation; excludes input construction.",
+          "p50_us": 31.968,
+          "p95_us": 45.257500000000064,
+          "p99_us": 94.78206000000085,
+          "successes": 5000,
+          "throughput_ops_s_from_measured_call_time": 28127.634610055295
+        }
+      ],
+      "repetitions": 3,
+      "run_p50_range_us": [
+        31.938499999999998,
+        32.088
+      ],
+      "run_p95_range_us": [
+        41.63950000000003,
+        50.862550000000056
+      ],
+      "run_p99_range_us": [
+        84.25301000000013,
+        124.7520100000001
+      ],
+      "samples_per_repetition": 5000,
+      "successes": 15000,
+      "total_samples": 15000
+    },
+    "ephemeral_certify_plus_kernel_entry": {
+      "failures": 0,
+      "median_run_mean_us": 49.843782,
+      "median_run_p50_us": 46.57,
+      "median_run_p95_us": 63.65950000000001,
+      "median_run_p99_us": 100.00361000000007,
+      "median_run_throughput_ops_s": 20062.683044396592,
+      "note": "Certificate issuance plus controller-entry checks, one runtime-monitor tick, and in-memory consumption.",
+      "per_run": [
+        {
+          "failures": 0,
+          "max_us": 2349.339,
+          "mean_us": 50.480112,
+          "n": 5000,
+          "name": "ephemeral_certify_plus_kernel_entry",
+          "note": "Certificate issuance plus controller-entry checks, one runtime-monitor tick, and in-memory consumption.",
+          "p50_us": 46.61,
+          "p95_us": 64.13255000000002,
+          "p99_us": 100.00361000000007,
+          "successes": 5000,
+          "throughput_ops_s_from_measured_call_time": 19809.78172156195
+        },
+        {
+          "failures": 0,
+          "max_us": 2224.17,
+          "mean_us": 49.1789526,
+          "n": 5000,
+          "name": "ephemeral_certify_plus_kernel_entry",
+          "note": "Certificate issuance plus controller-entry checks, one runtime-monitor tick, and in-memory consumption.",
+          "p50_us": 46.481,
+          "p95_us": 63.38700000000001,
+          "p99_us": 89.79610000000001,
+          "successes": 5000,
+          "throughput_ops_s_from_measured_call_time": 20333.901946500588
+        },
+        {
+          "failures": 0,
+          "max_us": 2186.243,
+          "mean_us": 49.843782,
+          "n": 5000,
+          "name": "ephemeral_certify_plus_kernel_entry",
+          "note": "Certificate issuance plus controller-entry checks, one runtime-monitor tick, and in-memory consumption.",
+          "p50_us": 46.57,
+          "p95_us": 63.65950000000001,
+          "p99_us": 104.06381000000016,
+          "successes": 5000,
+          "throughput_ops_s_from_measured_call_time": 20062.683044396592
+        }
+      ],
+      "repetitions": 3,
+      "run_p50_range_us": [
+        46.481,
+        46.61
+      ],
+      "run_p95_range_us": [
+        63.38700000000001,
+        64.13255000000002
+      ],
+      "run_p99_range_us": [
+        89.79610000000001,
+        104.06381000000016
+      ],
+      "samples_per_repetition": 5000,
+      "successes": 15000,
+      "total_samples": 15000
+    },
+    "restart_and_consumed_replay_denial": {
+      "failures": 0,
+      "median_run_mean_us": 116.75144,
+      "median_run_p50_us": 102.775,
+      "median_run_p95_us": 146.60619999999997,
+      "median_run_p99_us": 296.7679300000076,
+      "median_run_throughput_ops_s": 8565.204848865247,
+      "note": "Constructs a new durable verifier from disk and attempts fresh issuance for a consumed instance.",
+      "per_run": [
+        {
+          "failures": 0,
+          "max_us": 1767.109,
+          "mean_us": 128.20231,
+          "n": 100,
+          "name": "restart_and_consumed_replay_denial",
+          "note": "Constructs a new durable verifier from disk and attempts fresh issuance for a consumed instance.",
+          "p50_us": 104.00649999999999,
+          "p95_us": 227.49029999999996,
+          "p99_us": 296.7679300000076,
+          "successes": 100,
+          "throughput_ops_s_from_measured_call_time": 7800.171463369108
+        },
+        {
+          "failures": 0,
+          "max_us": 1218.25,
+          "mean_us": 112.80136,
+          "n": 100,
+          "name": "restart_and_consumed_replay_denial",
+          "note": "Constructs a new durable verifier from disk and attempts fresh issuance for a consumed instance.",
+          "p50_us": 102.34,
+          "p95_us": 135.6702,
+          "p99_us": 185.40676000000533,
+          "successes": 100,
+          "throughput_ops_s_from_measured_call_time": 8865.141342267505
+        },
+        {
+          "failures": 0,
+          "max_us": 1455.628,
+          "mean_us": 116.75144,
+          "n": 100,
+          "name": "restart_and_consumed_replay_denial",
+          "note": "Constructs a new durable verifier from disk and attempts fresh issuance for a consumed instance.",
+          "p50_us": 102.775,
+          "p95_us": 146.60619999999997,
+          "p99_us": 377.9209300000056,
+          "successes": 100,
+          "throughput_ops_s_from_measured_call_time": 8565.204848865247
+        }
+      ],
+      "repetitions": 3,
+      "run_p50_range_us": [
+        102.34,
+        104.00649999999999
+      ],
+      "run_p95_range_us": [
+        135.6702,
+        227.49029999999996
+      ],
+      "run_p99_range_us": [
+        185.40676000000533,
+        377.9209300000056
+      ],
+      "samples_per_repetition": 100,
+      "successes": 300,
+      "total_samples": 300
+    },
+    "runtime_revalidation": {
+      "failures": 0,
+      "median_run_mean_us": 14.28500659,
+      "median_run_p50_us": 12.228,
+      "median_run_p95_us": 13.43,
+      "median_run_p99_us": 43.86649999999973,
+      "median_run_throughput_ops_s": 70003.46788079431,
+      "note": "Checks MAC, TTL, binding, fresh evidence, confidence, live target, and workspace; no renewal.",
+      "per_run": [
+        {
+          "failures": 0,
+          "max_us": 15742.368,
+          "mean_us": 14.28500659,
+          "n": 100000,
+          "name": "runtime_revalidation",
+          "note": "Checks MAC, TTL, binding, fresh evidence, confidence, live target, and workspace; no renewal.",
+          "p50_us": 12.198,
+          "p95_us": 14.091,
+          "p99_us": 44.0371999999999,
+          "successes": 100000,
+          "throughput_ops_s_from_measured_call_time": 70003.46788079431
+        },
+        {
+          "failures": 0,
+          "max_us": 2243.679,
+          "mean_us": 13.5838558,
+          "n": 100000,
+          "name": "runtime_revalidation",
+          "note": "Checks MAC, TTL, binding, fresh evidence, confidence, live target, and workspace; no renewal.",
+          "p50_us": 12.228,
+          "p95_us": 13.27,
+          "p99_us": 43.456,
+          "successes": 100000,
+          "throughput_ops_s_from_measured_call_time": 73616.80031968537
+        },
+        {
+          "failures": 0,
+          "max_us": 10203.652,
+          "mean_us": 14.368643359999998,
+          "n": 100000,
+          "name": "runtime_revalidation",
+          "note": "Checks MAC, TTL, binding, fresh evidence, confidence, live target, and workspace; no renewal.",
+          "p50_us": 12.248,
+          "p95_us": 13.43,
+          "p99_us": 43.86649999999973,
+          "successes": 100000,
+          "throughput_ops_s_from_measured_call_time": 69595.9928119477
+        }
+      ],
+      "repetitions": 3,
+      "run_p50_range_us": [
+        12.198,
+        12.248
+      ],
+      "run_p95_range_us": [
+        13.27,
+        14.091
+      ],
+      "run_p99_range_us": [
+        43.456,
+        44.0371999999999
+      ],
+      "samples_per_repetition": 100000,
+      "successes": 300000,
+      "total_samples": 300000
+    }
+  },
+  "scope": "CPU-side deterministic-path microbenchmark. Excludes sensing, model inference, network/robot transport, trajectory generation, and controller settling. Host-specific; not a universal latency guarantee."
+}

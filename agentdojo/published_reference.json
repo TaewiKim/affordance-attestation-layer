@@ -1,0 +1,24 @@
+{
+  "source": "https://agentdojo.spylab.ai/results/",
+  "retrieved_utc": "2026-08-30",
+  "benchmark": "AgentDojo",
+  "note": "Published unguarded reference only; not an AAL measurement.",
+  "primary_reference": {
+    "provider": "openai",
+    "model": "gpt-4o-mini-2024-07-18",
+    "defense": null,
+    "attack": "important_instructions",
+    "utility": 0.6804,
+    "utility_under_attack": 0.4992,
+    "targeted_asr": 0.2719
+  },
+  "secondary_tool_aware_reference": {
+    "provider": "openai",
+    "model": "gpt-4o-2024-05-13",
+    "defense": null,
+    "attack": "tool_knowledge",
+    "utility": 0.6907,
+    "utility_under_attack": 0.5771,
+    "targeted_asr": 0.3450
+  }
+}

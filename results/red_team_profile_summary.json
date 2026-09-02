@@ -1,0 +1,519 @@
+{
+  "configuration": {
+    "benign_families": [
+      "nominal_handoff",
+      "nominal_scan",
+      "nominal_spatial_grasp",
+      "nominal_navigate",
+      "speed_force_at_boundary",
+      "endpoint_inside_tolerance_boundary",
+      "evidence_age_at_boundary",
+      "order_validity_at_boundary"
+    ],
+    "cases_per_family_per_seed": 25,
+    "hazard_families": [
+      "missing_order",
+      "tampered_order",
+      "expired_or_future_order",
+      "wrong_target_consistent_sensors",
+      "sensor_conflict",
+      "stale_evidence",
+      "protocol_skip",
+      "wrong_tool_or_calibration",
+      "wrong_room",
+      "spatial_redirect",
+      "spatial_frame_mismatch",
+      "endpoint_mutation_after_issue",
+      "token_replay",
+      "fresh_reissue_after_consumption",
+      "envelope_speed_excess",
+      "envelope_force_excess",
+      "runtime_target_substitution",
+      "runtime_workspace_intrusion",
+      "runtime_confidence_drop",
+      "runtime_evidence_staleness"
+    ],
+    "residual_limitation_controls": [
+      "reader_accepted_physical_spoof",
+      "same_identity_pose_drift_during_execution"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "families": {
+    "endpoint_inside_tolerance_boundary": {
+      "aal_completed": 125,
+      "aal_false_blocks_or_aborts": 0,
+      "category": "benign",
+      "false_block_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 125
+    },
+    "endpoint_mutation_after_issue": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "endpoint_outside_binding": 125
+      },
+      "simplex_escapes": 125
+    },
+    "envelope_force_excess": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "envelope_violation": 125
+      },
+      "simplex_escapes": 125
+    },
+    "envelope_speed_excess": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "envelope_violation": 125
+      },
+      "simplex_escapes": 125
+    },
+    "evidence_age_at_boundary": {
+      "aal_completed": 125,
+      "aal_false_blocks_or_aborts": 0,
+      "category": "benign",
+      "false_block_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 125
+    },
+    "expired_or_future_order": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "order:outside_validity_interval": 125
+      },
+      "simplex_escapes": 125
+    },
+    "fresh_reissue_after_consumption": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "replay:authorization_instance_consumed": 125
+      },
+      "simplex_escapes": 125
+    },
+    "missing_order": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "order:missing_or_invalid_mac": 125
+      },
+      "simplex_escapes": 125
+    },
+    "nominal_handoff": {
+      "aal_completed": 125,
+      "aal_false_blocks_or_aborts": 0,
+      "category": "benign",
+      "false_block_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 125
+    },
+    "nominal_navigate": {
+      "aal_completed": 125,
+      "aal_false_blocks_or_aborts": 0,
+      "category": "benign",
+      "false_block_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 0
+    },
+    "nominal_scan": {
+      "aal_completed": 125,
+      "aal_false_blocks_or_aborts": 0,
+      "category": "benign",
+      "false_block_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 125
+    },
+    "nominal_spatial_grasp": {
+      "aal_completed": 125,
+      "aal_false_blocks_or_aborts": 0,
+      "category": "benign",
+      "false_block_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 125
+    },
+    "order_validity_at_boundary": {
+      "aal_completed": 125,
+      "aal_false_blocks_or_aborts": 0,
+      "category": "benign",
+      "false_block_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 125
+    },
+    "protocol_skip": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "protocol:step_not_satisfied": 125
+      },
+      "simplex_escapes": 125
+    },
+    "reader_accepted_physical_spoof": {
+      "aal_completed": 125,
+      "admitted_as_expected": 125,
+      "category": "residual_limitation",
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 125,
+      "unexpectedly_contained": 0
+    },
+    "runtime_confidence_drop": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "abort:identity_confidence_dropped": 125
+      },
+      "simplex_escapes": 125
+    },
+    "runtime_evidence_staleness": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "revalidate:evidence_stale": 125
+      },
+      "simplex_escapes": 125
+    },
+    "runtime_target_substitution": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "abort:target_changed": 125
+      },
+      "simplex_escapes": 125
+    },
+    "runtime_workspace_intrusion": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "abort:workspace_intrusion": 125
+      },
+      "simplex_escapes": 0
+    },
+    "same_identity_pose_drift_during_execution": {
+      "aal_completed": 125,
+      "admitted_as_expected": 125,
+      "category": "residual_limitation",
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "admitted": 125
+      },
+      "simplex_escapes": 125,
+      "unexpectedly_contained": 0
+    },
+    "sensor_conflict": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "target:sensor_conflict": 125
+      },
+      "simplex_escapes": 125
+    },
+    "spatial_frame_mismatch": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "geometry:endpoint_frame_mismatch": 125
+      },
+      "simplex_escapes": 125
+    },
+    "spatial_redirect": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "geometry:endpoint_not_at_sensed_target": 125
+      },
+      "simplex_escapes": 125
+    },
+    "speed_force_at_boundary": {
+      "aal_completed": 125,
+      "aal_false_blocks_or_aborts": 0,
+      "category": "benign",
+      "false_block_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "complete": 125
+      },
+      "simplex_escapes": 125
+    },
+    "stale_evidence": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "target:evidence_stale": 125
+      },
+      "simplex_escapes": 125
+    },
+    "tampered_order": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "order:missing_or_invalid_mac": 125
+      },
+      "simplex_escapes": 125
+    },
+    "token_replay": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "replayed_certificate": 125
+      },
+      "simplex_escapes": 125
+    },
+    "wrong_room": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "geometry:wrong_room": 125
+      },
+      "simplex_escapes": 125
+    },
+    "wrong_target_consistent_sensors": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "target:target_not_authorized_by_order": 125
+      },
+      "simplex_escapes": 125
+    },
+    "wrong_tool_or_calibration": {
+      "aal_barrier_escapes": 0,
+      "aal_completed": 0,
+      "aal_contained": 125,
+      "category": "hazard",
+      "escape_upper95": 0.023680957510334832,
+      "n": 125,
+      "no_guard_escapes": 125,
+      "reasons": {
+        "tool:tool_uncalibrated": 65,
+        "tool:wrong_tool": 60
+      },
+      "simplex_escapes": 125
+    }
+  },
+  "overall": {
+    "aal_barrier_escapes": 0,
+    "aal_benign_completion_rate": 1.0,
+    "aal_benign_completions": 1000,
+    "aal_escape_upper95": 0.0011975752431599984,
+    "aal_false_blocks_or_aborts": 0,
+    "benign_cases": 1000,
+    "hazard_cases": 2500,
+    "mcnemar_aal_vs_simplex": {
+      "discordant_aal_safe_simplex_unsafe": 2375,
+      "discordant_aal_unsafe_simplex_safe": 0,
+      "log10_p_value_when_one_sided_discordance": -714.6452097062913,
+      "p_value": 0.0
+    },
+    "no_guard_escapes": 2500,
+    "residual_controls_admitted_as_expected": 250,
+    "residual_limitation_controls": 250,
+    "simplex_escapes": 2375
+  },
+  "per_seed": {
+    "0": {
+      "aal_barrier_escapes": 0,
+      "aal_benign_completions": 200,
+      "benign_cases": 200,
+      "hazard_cases": 500,
+      "residual_controls": 50,
+      "residual_controls_admitted_as_expected": 50,
+      "simplex_escapes": 475
+    },
+    "1": {
+      "aal_barrier_escapes": 0,
+      "aal_benign_completions": 200,
+      "benign_cases": 200,
+      "hazard_cases": 500,
+      "residual_controls": 50,
+      "residual_controls_admitted_as_expected": 50,
+      "simplex_escapes": 475
+    },
+    "2": {
+      "aal_barrier_escapes": 0,
+      "aal_benign_completions": 200,
+      "benign_cases": 200,
+      "hazard_cases": 500,
+      "residual_controls": 50,
+      "residual_controls_admitted_as_expected": 50,
+      "simplex_escapes": 475
+    },
+    "3": {
+      "aal_barrier_escapes": 0,
+      "aal_benign_completions": 200,
+      "benign_cases": 200,
+      "hazard_cases": 500,
+      "residual_controls": 50,
+      "residual_controls_admitted_as_expected": 50,
+      "simplex_escapes": 475
+    },
+    "4": {
+      "aal_barrier_escapes": 0,
+      "aal_benign_completions": 200,
+      "benign_cases": 200,
+      "hazard_cases": 500,
+      "residual_controls": 50,
+      "residual_controls_admitted_as_expected": 50,
+      "simplex_escapes": 475
+    }
+  },
+  "reason_counts_hazard": {
+    "abort:identity_confidence_dropped": 125,
+    "abort:target_changed": 125,
+    "abort:workspace_intrusion": 125,
+    "endpoint_outside_binding": 125,
+    "envelope_violation": 250,
+    "geometry:endpoint_frame_mismatch": 125,
+    "geometry:endpoint_not_at_sensed_target": 125,
+    "geometry:wrong_room": 125,
+    "order:missing_or_invalid_mac": 250,
+    "order:outside_validity_interval": 125,
+    "protocol:step_not_satisfied": 125,
+    "replay:authorization_instance_consumed": 125,
+    "replayed_certificate": 125,
+    "revalidate:evidence_stale": 125,
+    "target:evidence_stale": 125,
+    "target:sensor_conflict": 125,
+    "target:target_not_authorized_by_order": 125,
+    "tool:tool_uncalibrated": 65,
+    "tool:wrong_tool": 60
+  },
+  "scope": "Generated orthogonal stress profile; not a deployment operational profile or deployment-risk estimate. The generator does not import the original scenario generator."
+}

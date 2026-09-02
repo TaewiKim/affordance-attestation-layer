@@ -1,0 +1,133 @@
+{
+  "decision_truth_table": {
+    "single_factor": {
+      "A": true,
+      "B": false
+    },
+    "two_distinct_factors": {
+      "AA": true,
+      "AB": false,
+      "BA": false,
+      "BB": false
+    }
+  },
+  "fault_model": {
+    "benign": "with probability m_common all readers miss the authorized identity; otherwise each misses independently with m_ind",
+    "hazard": "with probability q_common all readers falsely accept the authorized identity; otherwise each falsely accepts independently with q_ind"
+  },
+  "monte_carlo": {
+    "max_absolute_error": 0.0029800000000000937,
+    "max_allowed_absolute_error": 0.005,
+    "n_per_selected_point": 50000,
+    "rows": [
+      {
+        "absolute_error": 0.00038000000000000013,
+        "analytical_probability": 0.01,
+        "common_cause_rate": 0.0,
+        "events": 519,
+        "independent_rate": 0.01,
+        "mode": "single_factor",
+        "n": 50000,
+        "observed_probability": 0.01038,
+        "outcome": "hazard_escape"
+      },
+      {
+        "absolute_error": 1.9999999999999998e-05,
+        "analytical_probability": 0.0001,
+        "common_cause_rate": 0.0,
+        "events": 4,
+        "independent_rate": 0.01,
+        "mode": "two_distinct_factors",
+        "n": 50000,
+        "observed_probability": 8e-05,
+        "outcome": "hazard_escape"
+      },
+      {
+        "absolute_error": 0.0010400000000000027,
+        "analytical_probability": 0.0199,
+        "common_cause_rate": 0.01,
+        "events": 943,
+        "independent_rate": 0.01,
+        "mode": "single_factor",
+        "n": 50000,
+        "observed_probability": 0.01886,
+        "outcome": "hazard_escape"
+      },
+      {
+        "absolute_error": 4.099999999999937e-05,
+        "analytical_probability": 0.010099,
+        "common_cause_rate": 0.01,
+        "events": 507,
+        "independent_rate": 0.01,
+        "mode": "two_distinct_factors",
+        "n": 50000,
+        "observed_probability": 0.01014,
+        "outcome": "hazard_escape"
+      },
+      {
+        "absolute_error": 0.0028200000000000447,
+        "analytical_probability": 0.9,
+        "common_cause_rate": 0.0,
+        "events": 44859,
+        "independent_rate": 0.1,
+        "mode": "single_factor",
+        "n": 50000,
+        "observed_probability": 0.89718,
+        "outcome": "benign_completion"
+      },
+      {
+        "absolute_error": 0.0007600000000000939,
+        "analytical_probability": 0.81,
+        "common_cause_rate": 0.0,
+        "events": 40462,
+        "independent_rate": 0.1,
+        "mode": "two_distinct_factors",
+        "n": 50000,
+        "observed_probability": 0.80924,
+        "outcome": "benign_completion"
+      },
+      {
+        "absolute_error": 0.0017800000000000038,
+        "analytical_probability": 0.855,
+        "common_cause_rate": 0.05,
+        "events": 42661,
+        "independent_rate": 0.1,
+        "mode": "single_factor",
+        "n": 50000,
+        "observed_probability": 0.85322,
+        "outcome": "benign_completion"
+      },
+      {
+        "absolute_error": 0.0029800000000000937,
+        "analytical_probability": 0.7695,
+        "common_cause_rate": 0.05,
+        "events": 38624,
+        "independent_rate": 0.1,
+        "mode": "two_distinct_factors",
+        "n": 50000,
+        "observed_probability": 0.77248,
+        "outcome": "benign_completion"
+      }
+    ],
+    "seed": 20260830
+  },
+  "scope": "Synthetic sensitivity under injected reader faults. Rates are design parameters, not estimates of sensor reliability or deployment risk.",
+  "selected_exact_probabilities": {
+    "independent_false_accept_1pct_common_cause_1pct": {
+      "single_factor": 0.0199,
+      "two_distinct_factors": 0.010099
+    },
+    "independent_false_accept_1pct_no_common_cause": {
+      "single_factor": 0.01,
+      "two_distinct_factors": 0.0001
+    },
+    "independent_miss_10pct_common_cause_5pct": {
+      "single_factor": 0.855,
+      "two_distinct_factors": 0.7695
+    },
+    "independent_miss_10pct_no_common_cause": {
+      "single_factor": 0.9,
+      "two_distinct_factors": 0.81
+    }
+  }
+}

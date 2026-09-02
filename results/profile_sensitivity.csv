@@ -1,0 +1,5 @@
+profile,dominant_weight,weighted_upper95
+Balanced,authority (14.3\%),0.008803367379
+Authority-heavy,authority (35.0\%),0.008153933264
+Runtime-heavy,runtime (40.0\%),0.007954422620
+Semantic-heavy,target evidence (25.0\%),0.008371852811
