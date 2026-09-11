@@ -20,6 +20,7 @@ ALPHA = 0.05
 ROOT = Path(__file__).resolve().parents[1]
 RED_TEAM_SUMMARY = ROOT / "results" / "red_team_profile_summary.json"
 CSV_OUT = ROOT / "results" / "profile_sensitivity.csv"
+TEX_OUT = ROOT / "generated" / "profile_sensitivity_table.tex"
 
 
 @dataclass(frozen=True)
@@ -135,6 +136,29 @@ def write_outputs(strata: dict[str, Stratum]) -> list[dict[str, object]]:
                 f"{row['weighted_upper95']:.12f}",
             ])
 
+    lines = [
+        r"\begin{table}[t]",
+        r"\centering",
+        r"\caption{Hypothetical operational-profile sensitivity using hazard-group-specific exact upper bounds from the orthogonal stress profile. These are sensitivity calculations, not deployment-risk estimates.}",
+        r"\label{tab:profilesensitivity}",
+        r"\begin{tabular}{lcc}",
+        r"\toprule",
+        r"Hypothetical profile & Largest class weight & Weighted upper 95\% bound\\",
+        r"\midrule",
+    ]
+    for row in rows:
+        lines.append(
+            f"{row['profile']} & {row['dominant_weight']} & "
+            f"{100 * row['weighted_upper95']:.3f}\\%\\\\"
+        )
+    lines += [
+        r"\bottomrule",
+        r"\end{tabular}",
+        r"\end{table}",
+        "",
+    ]
+    TEX_OUT.parent.mkdir(parents=True, exist_ok=True)
+    TEX_OUT.write_text("\n".join(lines), encoding="utf-8")
     return rows
 
 
@@ -158,6 +182,7 @@ def main() -> None:
         print(f"{row['profile']:18s}: weighted upper95={100*row['weighted_upper95']:.4f}%")
 
     print(f"\nSaved: {CSV_OUT.relative_to(ROOT)}")
+    print(f"Saved: {TEX_OUT.relative_to(ROOT)}")
     print("CAUTION: All quantities are scoped to generated profiles; none estimates deployment risk.")
 
 

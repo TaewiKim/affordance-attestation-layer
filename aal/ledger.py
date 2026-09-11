@@ -24,7 +24,7 @@ provide exactly-once physical effect. An execution that is aborted part-way may 
 have produced a partial physical effect (an object grasped, a container tilted), and the
 released instance is then re-certifiable, so the same physical action can be re-attempted.
 Exactly-once effect would additionally require an in-flight/committed distinction and
-resume-only recovery; see the discussion in the paper.
+resume-only recovery, which this layer does not implement.
 
 Persistence is explicit at every construction site: `AuthorizationLedger.durable(path)`
 writes through to disk so consumption survives a certifier/kernel restart, and

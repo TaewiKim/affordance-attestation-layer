@@ -1,4 +1,5 @@
 __pycache__/
 *.pyc
+generated/
 results/red_team_profile_cases.csv
 results/agentdojo_traces/

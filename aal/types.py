@@ -1,6 +1,6 @@
 """AAL core data types.
 
-Mirrors the certificate schema and action model from the research plan (sec 4.2).
+Defines the certificate schema and the action model the kernel admits against.
 Pure-Python, no ML dependencies, so this layer is testable independently of any VLA.
 """
 from __future__ import annotations
@@ -62,7 +62,7 @@ class Capability(str, Enum):
 
 # Which capabilities physically actuate near/at a person. These require strict certificates.
 CONTACT_CAPABILITIES = {Capability.HANDOFF, Capability.TOUCH, Capability.SCAN, Capability.GRASP}
-# Non-physical or low-risk capabilities may receive auto-certificates (research plan sec 14).
+# Non-physical or low-risk capabilities may receive auto-certificates.
 LOW_RISK_CAPABILITIES = {Capability.OBSERVE, Capability.SPEAK}
 
 

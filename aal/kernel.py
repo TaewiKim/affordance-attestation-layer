@@ -1,9 +1,9 @@
 """Certified Action Kernel + Runtime Monitor.
 
-The kernel is the ONLY path to the controller (research plan sec 4.1, 11.1). It refuses any
-action lacking a valid, signature-checked certificate whose binding matches the action. The
-runtime monitor re-checks the certificate against the *live* world state on every control tick
-and aborts on staleness / envelope breach (research plan sec 4.4 properties P1-P3).
+The kernel is the ONLY path to the controller. It refuses any action lacking a valid,
+signature-checked certificate whose binding matches the action. The runtime monitor re-checks the
+certificate against the *live* world state on every control tick and aborts on staleness /
+envelope breach. Properties P1-P3 state these obligations; `aal.formal` checks them.
 """
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ class ExecutionResult:
 
 
 class RuntimeMonitor:
-    """Re-attests a live certificate against the current world (research plan sec 5 H3)."""
+    """Re-attests a live certificate against the current world."""
 
     def __init__(self, clock: Clock, enable: bool = True):
         self.clock = clock
@@ -88,10 +88,10 @@ class CertifiedActionKernel:
                 world: WorldState, monitor_ticks: int = 3,
                 tick_ms: float = 150.0,
                 world_events: list | None = None) -> ExecutionResult:
-        """Attempt to run `req`. Enforces the full invariant from research plan sec 4.3.
+        """Attempt to run `req`. Enforces the full controller-admission invariant.
 
         world_events: optional list of (tick_index, mutation_fn) applied before each tick to
-        simulate dynamic-state changes (person enters, target moves) for H3 scenarios.
+        simulate dynamic-state changes (person enters, target moves) during execution.
         """
         audit: list[str] = []
         t_start = self.clock.now()

@@ -7,8 +7,10 @@ tool state, and the commanded endpoint resolve to one physical entity, and it
 re-establishes that condition while the action executes.
 
 This repository contains the implementation, the deterministic workload
-generators, the analysis scripts, and every result file the reported figures are
-computed from. It contains no write-up.
+generators, the analysis scripts, every result file the reported figures are
+computed from, and the generators that turn those files into the reported
+tables. What those generators write is table matter -- caption, rows, and
+footnote; no section of the write-up is here.
 
 ## Layout
 
@@ -17,7 +19,8 @@ computed from. It contains no write-up.
 | `aal/` | The implementation: types, order authority, certifier, kernel, durable ledger, runtime monitor, bounded verifier, exact statistics |
 | `experiments/` | Deterministic workload generators |
 | `agentdojo/` | Bridge that runs the external AgentDojo prompt-injection benchmark through the AAL action-manifest gate |
-| `analysis/` | Exact finite-sample bounds, profile sensitivity, and scope separation |
+| `analysis/` | Exact finite-sample bounds, profile sensitivity, scope separation, and the table generators |
+| `generated/` | LaTeX tables written by `analysis/make_*_table.py` (build output, not committed) |
 | `results/` | Committed result files (below) |
 
 ## Data
@@ -42,9 +45,13 @@ hand-entered.
 | `agentdojo_scope_analysis.json` | The dynamic run separated by what an authorization layer can govern | `analysis/agentdojo_scope_analysis.py` |
 | `formal_check.json` | Bounded verification of properties P1–P9 over the enumerated domain | `python -m aal.formal` |
 
+Every generator asserts the aggregate totals it is about to print against the
+result file it read, so a table cannot drift from the run that produced it.
+
 Two result sets in the study are not reproducible from this repository, and are
 not included: the physical robot trials, which need the arm and its sensing
-hardware, and the full-robot simulation, which needs a licensed simulator.
+hardware, and the full-robot simulation, which needs a licensed simulator. The
+table built from the physical trials therefore has no generator here either.
 
 ## Reproducing
 
@@ -58,6 +65,12 @@ python experiments/run_compound_faults.py
 python experiments/run_stateful_missions.py
 python analysis/barrier_reliability.py
 python analysis/agentdojo_scope_analysis.py
+
+# tables, into generated/
+python analysis/make_red_team_table.py
+python analysis/make_compound_fault_table.py
+python analysis/make_stateful_mission_table.py
+python analysis/make_agentdojo_table.py
 ```
 
 Each runner exits non-zero if an in-scope hazardous demand escapes the barrier, a
@@ -70,7 +83,9 @@ library:
 
 ```bash
 python experiments/run_sensing_reliability_model.py      # 400,000 verifier calls
+python analysis/make_sensing_reliability_table.py
 python experiments/run_overhead_benchmark.py             # host-specific timing
+python analysis/make_overhead_table.py
 ```
 
 ### External benchmark
@@ -102,6 +117,14 @@ Two assurance boundaries are deliberately exercised and deliberately not
 defended: a physical spoof already accepted by a trusted reader, and same-identity
 pose drift during execution. Their controls are expected to be admitted, and they
 are excluded from the in-scope denominator rather than counted as successes.
+
+## Author
+
+Taewi Kim — twkim@hallym.or.kr (corresponding)
+
+1. Chuncheon Sacred Heart Hospital, Hallym University Medical Center, Chuncheon,
+   Republic of Korea
+2. New Frontier Research Institute, Hallym University, Chuncheon, Republic of Korea
 
 ## Licence
 

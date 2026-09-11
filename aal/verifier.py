@@ -99,7 +99,7 @@ class AALVerifier:
         # optional global confidence-threshold override for sensitivity/ROC analysis
         self.conf_override = cfg.get("confidence_threshold_override", None)
         # spatial binding: a named endpoint must sit within this distance of where an
-        # authenticated reader observed the authorized target (Sec. III)
+        # authenticated reader observed the authorized target
         self.position_tolerance_m = float(cfg.get("position_tolerance_m", 0.15))
         self._nonce = 0
 

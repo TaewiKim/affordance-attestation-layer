@@ -1,12 +1,12 @@
-"""Trusted order source and protocol engine (removes the ground-truth oracle).
+"""Trusted order source and protocol engine.
 
-Reviewer point: the certifier must NOT consult a magic ``correct_target_id``. In a real system the
-authorized target comes from a signed task order (pharmacy/EHR/scheduler) and a protocol state
-machine, and target binding is decided by whether *authenticated sensor readings of the physically
-present entity* agree with that signed order. This module supplies exactly that, so the verifier
-never sees ground truth --- only a signed order plus sensor readings that may be wrong or spoofed.
+The certifier does not consult a ``correct_target_id`` oracle. The authorized target comes from a
+signed task order (pharmacy/EHR/scheduler) and a protocol state machine, and target binding is
+decided by whether *authenticated sensor readings of the physically present entity* agree with that
+signed order. This module supplies exactly that, so the verifier never sees ground truth --- only a
+signed order plus sensor readings that may be wrong or spoofed.
 
-Trust assumptions (stated in the paper as A1-A6):
+Trust assumptions A1-A6, of which this module rests on three:
   A1 order-authority signing key is uncompromised
   A3 sensor evidence is authenticated at the reader (see limitation: physical tag spoofing)
   A5 protocol-state source is trusted

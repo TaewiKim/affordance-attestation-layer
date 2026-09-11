@@ -1,10 +1,12 @@
-"""Guards: AAL-full, ablations, and honestly-named baselines.
+"""Guards: AAL-full, its ablations, and the comparison baselines.
 
-Baselines renamed per review: B2 is a keyword language guard (not an LLM judge), B7 is a
-dynamics safety filter that projects the requested action onto a barrier-defined safe set
-(CBF-style), modifying rather than authorizing. Every guard reports the action parameters that
-actually reached the controller so the scorer can distinguish a blocked action, a semantically
-unauthorized execution, and a physically-neutralized (clamped) execution.
+Each baseline is named for what it does. ``KeywordLanguageGuard`` matches request text against a
+keyword list; it is not a language-model judge. ``DynamicsSafetyFilter`` projects the requested
+action onto a barrier-defined safe set (CBF-style), modifying the action rather than authorizing
+it. ``SimplexRTAGuard`` transfers control to a safe controller on an imminent envelope violation.
+Every guard reports the action parameters that actually reached the controller so the scorer can
+distinguish a blocked action, a semantically unauthorized execution, and a physically-neutralized
+(clamped) execution.
 """
 from __future__ import annotations
 

@@ -66,7 +66,7 @@ def _forged_certs(req):
 def _tampered_genuine(cert):
     """Take a GENUINELY-signed certificate and mutate a security-relevant field WITHOUT re-signing
     (the adversary lacks the key). Each must be rejected because the signature covers these fields.
-    This is the review's certificate-tampering adversary."""
+    This is the certificate-tampering adversary."""
     import copy
     out = {}
     t = copy.deepcopy(cert); t.envelope.max_force_n = 1e9;         out["widen_force"] = t
@@ -141,8 +141,8 @@ def check_all():
             if ev_name == "stale2" and issued and cap not in LOW_RISK_CAPABILITIES:
                 viol.setdefault("P5", []).append((cap.value, "stale_evidence_certified"))
 
-            # ---- P6: a single-use certificate cannot be replayed. The reviewer's explicit
-            # replay adversary: a genuine cert, once consumed, is presented AGAIN for a fresh
+            # ---- P6: a single-use certificate cannot be replayed. The replay adversary:
+            # a genuine cert, once consumed, is presented AGAIN for a fresh
             # task with the same (capability, target). The second execution must be refused. ----
             if issued and result.certificate_id:
                 kr = CertifiedActionKernel(clock, RuntimeMonitor(clock, enable=True))
