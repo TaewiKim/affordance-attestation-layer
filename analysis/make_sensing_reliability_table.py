@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "results" / "sensing_reliability_summary.json"
-TABLE = ROOT / "generated" / "sensing_reliability_table.tex"
+TABLE = ROOT / "from_results" / "sensing_reliability_table.tex"
 
 EXPECTED_TRUTH = {
     "single_factor": {"A": True, "B": False},

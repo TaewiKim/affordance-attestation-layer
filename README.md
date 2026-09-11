@@ -20,7 +20,7 @@ footnote; no section of the write-up is here.
 | `experiments/` | Deterministic workload generators |
 | `agentdojo/` | Bridge that runs the external AgentDojo prompt-injection benchmark through the AAL action-manifest gate |
 | `analysis/` | Exact finite-sample bounds, profile sensitivity, scope separation, and the table generators |
-| `generated/` | LaTeX tables written by `analysis/make_*_table.py` (build output, not committed) |
+| `from_results/` | LaTeX tables written by `analysis/make_*_table.py` (build output, not committed) |
 | `results/` | Committed result files (below) |
 
 ## Data
@@ -66,7 +66,7 @@ python experiments/run_stateful_missions.py
 python analysis/barrier_reliability.py
 python analysis/agentdojo_scope_analysis.py
 
-# tables, into generated/
+# tables, into from_results/
 python analysis/make_red_team_table.py
 python analysis/make_compound_fault_table.py
 python analysis/make_stateful_mission_table.py

@@ -20,7 +20,7 @@ ALPHA = 0.05
 ROOT = Path(__file__).resolve().parents[1]
 RED_TEAM_SUMMARY = ROOT / "results" / "red_team_profile_summary.json"
 CSV_OUT = ROOT / "results" / "profile_sensitivity.csv"
-TEX_OUT = ROOT / "generated" / "profile_sensitivity_table.tex"
+TEX_OUT = ROOT / "from_results" / "profile_sensitivity_table.tex"
 
 
 @dataclass(frozen=True)

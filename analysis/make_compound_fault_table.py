@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "results" / "compound_fault_summary.json"
-OUTPUT = ROOT / "generated" / "compound_fault_table.tex"
+OUTPUT = ROOT / "from_results" / "compound_fault_table.tex"
 
 ROWS = (
     ("pre_issue_pair", "Pre-issuance pair"),

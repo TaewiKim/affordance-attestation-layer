@@ -15,7 +15,7 @@ ORACLE = ROOT / "results" / "agentdojo_manifest_oracle.json"
 LIVE = ROOT / "results" / "agentdojo_aal_live.json"
 SCOPE = ROOT / "results" / "agentdojo_scope_analysis.json"
 REFERENCE = ROOT / "agentdojo" / "published_reference.json"
-OUTPUT = ROOT / "generated" / "agentdojo_table.tex"
+OUTPUT = ROOT / "from_results" / "agentdojo_table.tex"
 
 BUCKETS = (
     ("in_scope", "In scope: sensitive effect outside user authority"),

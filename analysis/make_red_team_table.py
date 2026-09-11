@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "results" / "red_team_profile_summary.json"
-OUTPUT = ROOT / "generated" / "red_team_table.tex"
+OUTPUT = ROOT / "from_results" / "red_team_table.tex"
 
 GROUPS = OrderedDict([
     ("Authority and order validity", [

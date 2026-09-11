@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "results" / "stateful_mission_summary.json"
-OUTPUT = ROOT / "generated" / "stateful_mission_table.tex"
+OUTPUT = ROOT / "from_results" / "stateful_mission_table.tex"
 
 ROWS = (
     ("benign_completion", "Benign certified completion"),

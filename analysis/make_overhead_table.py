@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "results" / "overhead_benchmark.json"
-OUTPUT = ROOT / "generated" / "overhead_table.tex"
+OUTPUT = ROOT / "from_results" / "overhead_table.tex"
 
 ROWS = (
     ("runtime_revalidation", "Runtime revalidation"),
